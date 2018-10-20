@@ -1,16 +1,21 @@
 <template>
-  <h1>${message}</h1>
-
-  <form submit.trigger="addTodo()">
-    <input type="text" value.bind="todoDescription">
-    <button type="submit">Add Todo</button>
-  </form>
-
-  <ul>
-    <li repeat.for="todo of todos">
-      <input type="checkbox" checked.bind="todo.done">
-      <span>${todo.description}</span>
-      <button click.trigger="removeTodo(todo)">Remove</button>
-    </li>
-  </ul>
+  <div class="app">
+    <div class="toolbar">
+      <button class="toolbar-button">New</button>
+      <button class="toolbar-button">Delete</button>
+      <input type="text" placeholder="Search..." class="toolbar-search">
+    </div>
+    <div class="note-container">
+      <div class="note-selectors">
+        <div class="note-selector">
+          <p class="note-selector-title"></p>
+          <p class="note-select-timestamp"></p>
+        </div>
+      </div>
+      <div class="note-editor">
+        <p class="note-editor-info"></p>
+        <textarea class="note-editor-input"></textarea>
+      </div>
+    </div>
+  </div>
 </template>
