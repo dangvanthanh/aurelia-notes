@@ -1,21 +1,26 @@
 <template>
   <div class="app">
     <div class="toolbar">
-      <button class="toolbar-button">New</button>
-      <button class="toolbar-button">Delete</button>
+      <button class="toolbar-button" click.trigger="createNote()">New</button>
+      <button class="toolbar-button" click.trigger="deleteNote()">Delete</button>
       <input type="text" placeholder="Search..." class="toolbar-search">
     </div>
     <div class="note-container">
       <div class="note-selectors">
-        <div class="note-selector">
-          <p class="note-selector-title"></p>
-          <p class="note-select-timestamp"></p>
+        <div 
+          class="note-selector" 
+          repeat.for="note of notes" 
+          class.bind="note.id == selectedNoteId ? 'active' : ''" 
+          click.trigger="selectedNote(note.id)">
+          <p class="note-selector-title">${note.body | titleFormat }</p>
+          <p class="note-select-timestamp">${note.timestamp | dateFormat }</p>
         </div>
       </div>
-      <div class="note-editor">
-        <p class="note-editor-info"></p>
-        <textarea class="note-editor-input"></textarea>
+      <div class="note-editor" if.bind="selectedNoteElement != null">
+        <p class="note-editor-info">${selectedNoteElement.timestamp | fullDateFormat }</p>
+        <textarea class="note-editor-input" value.bind="selectedNoteElement.body"></textarea>
       </div>
+      <div class="note-editor" else></div>
     </div>
   </div>
 </template>

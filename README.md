@@ -1,5 +1,7 @@
 # Notes
 
+![](screenshot.png)
+
 ## Features
 
 - Store notes as an array of object
