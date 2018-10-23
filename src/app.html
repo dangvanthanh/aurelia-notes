@@ -9,16 +9,16 @@
       <div class="note-selectors">
         <div 
           class="note-selector" 
-          repeat.for="note of notes" 
-          class.bind="note.id == selectedNoteId ? 'active' : ''" 
-          click.trigger="selectedNote(note.id)">
+          repeat.for="note of transformNotes" 
+          class.bind="note == selectedNote ? 'active' : ''" 
+          click.trigger="selectNote(note)">
           <p class="note-selector-title">${note.body | titleFormat }</p>
           <p class="note-select-timestamp">${note.timestamp | dateFormat }</p>
         </div>
       </div>
-      <div class="note-editor" if.bind="selectedNoteElement != null">
-        <p class="note-editor-info">${selectedNoteElement.timestamp | fullDateFormat }</p>
-        <textarea class="note-editor-input" value.bind="selectedNoteElement.body"></textarea>
+      <div class="note-editor" if.bind="selectedNote != null">
+        <p class="note-editor-info">${selectedNote.timestamp | fullDateFormat }</p>
+        <textarea class="note-editor-input" value.bind="selectedNote.body"></textarea>
       </div>
       <div class="note-editor" else></div>
     </div>

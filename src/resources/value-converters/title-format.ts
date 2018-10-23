@@ -1,17 +1,17 @@
 export class TitleFormatValueConverter {
-  toView(value) {
+  toView(body) {
     const maxLength = 20;
 
-    if (!value) {
+    if (!body) {
       return 'New Note';
     }
 
-    const length = value.length;
+    const length = body.length;
 
     if (length > maxLength) {
-      return value.substr(0, maxLength - 3) + '...';
+      return body.substr(0, maxLength - 3) + '...';
     }
 
-    return value;
+    return body;
   }
 }

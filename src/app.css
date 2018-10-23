@@ -1,4 +1,3 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +6,6 @@
   box-sizing: border-box;
 }
 
-/* LAYOUT */
 .app {
   display: flex;
   flex-direction: column;
@@ -55,10 +53,6 @@
   padding: 0 2em 0 2em;
 }
 
-/* COLORS */
-* {
-  color: #454545;
-}
 .toolbar {
   background-color: #dcdadc;
 }
@@ -88,7 +82,6 @@
   color: #dcdadc;
 }
 
-/* TYPOGRAPHY */
 body {
   font-family: sans-serif;
 }
