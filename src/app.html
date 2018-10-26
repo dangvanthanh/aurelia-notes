@@ -13,7 +13,7 @@
           class.bind="note == selectedNote ? 'active' : ''" 
           click.trigger="selectNote(note)">
           <p class="note-selector-title">${note.body | titleFormat }</p>
-          <p class="note-select-timestamp">${note.timestamp | dateFormat }</p>
+          <p class="note-selector-timestamp">${note.timestamp | dateFormat }</p>
         </div>
       </div>
       <div class="note-editor" if.bind="selectedNote != null">
