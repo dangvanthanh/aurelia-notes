@@ -11,3 +11,16 @@
 - Create a new note with a button
 - Delete the selected note with a button
 - Filter notes on search input
+
+## Components
+
+```
+<App>
+├── <Toolbar>
+└── <NoteContainer>
+    ├── <NoteSelectors>
+    │   └── <NoteSelector>
+    │   └── <NoteSelector>
+    │   └── <NoteSelector>
+    └── <NoteEditor>
+```
