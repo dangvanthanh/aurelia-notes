@@ -36,4 +36,16 @@ export class App {
   selectNote(note) {
     this.selectedNote = note;
   }
+
+  handleNoteChange(text) {
+    this.notes.map(note => {
+      if (note.id === this.selectedNote.id) {
+        return {
+          id: note.id,
+          body: text,
+          timestamp: Date.now()
+        };
+      }
+    });
+  }
 }
